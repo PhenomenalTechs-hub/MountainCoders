@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Blogs | Mountain Coders{% endblock title %}
+{% block body %}
+<h1>Welcome to Mountain Coders Blog</h1>
+{% for blog in blogs %}
+{{blog.title}}
+<br>
+{% endfor %}
+{% endblock body %}
