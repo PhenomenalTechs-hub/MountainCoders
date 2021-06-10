@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Blogs | Mountain Coders{% endblock title %}
 {% block body %}
-<h1>Welcome to Mountain Coders Blog</h1>
-{% for blog in blogs %}
-{{blog.title}}
-<br>
-{% endfor %}
+<div class="container">
+
+    <h1 class="my-3">Welcome to Mountain Coders Blog</h1>
+    {% for blog in blogs %}
+    <div class="my-4">
+            <h3 class=""> <a class="text-dark" href="/blogpost/{{blog.slug}}">{{blog.title}}</a> </h3>
+            <div class="my-2">
+                
+                {{blog.content|slice:250}}
+            </div>
+            <a class="text-dark" href="/blogpost/{{blog.slug}}"><button class="btn btn-primary">Read More...</button></a>
+    </div>
+    {% endfor %}
+</div>
 {% endblock body %}
